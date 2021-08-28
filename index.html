@@ -8,7 +8,91 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<style>
+    body {
+  font-family: "Lato", sans-serif;
+}
+
+.btn{
+    position: fixed;
+    border: 3px solid black;
+    color: black;
+    left: 0px;
+    top: 50px;
+    z-index: 10;
+    transition: 0.5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<script>
+function openNav(){
+
+let isNavActive = document.getElementById("mySidenav").style.width === "250px" ? true:false
+
+
+if(isNavActive){
+    document.getElementById("mySidenav").style.width = "0"
+    document.getElementById("btn").style.left = "0px"
+
+    return
+}
+
+document.getElementById("btn").style.left = "250px"
+document.getElementById("mySidenav").style.width = "250px" 
+
+}
+</script>
+
 <body>
+        <button onclick="openNav()" id="btn" class="btn">
+            >
+        </button>
+
+    <div class="sidenav" id="mySidenav">
+        <a href="">menu</a>
+        <a href="">home</a>
+        <a href="">sobre</a>
+        <a href="">compras</a>
+        <a href="">contato</a>
+    </div>
     <div class="caixa1">
         <div class="conteudo-titulo">
             <span class="titulo">
